@@ -2,6 +2,7 @@ import { Food } from './../../../models/Food.model';
 import { Component, inject, signal } from '@angular/core';
 import { FoodService } from '../../services/food.service';
 import { FooditemComponent } from "../fooditem/fooditem.component";
+import { ImageCheckService } from '../../../shared/services/image-check.service';
 
 @Component({
   selector: 'app-foodlist',
@@ -11,12 +12,31 @@ import { FooditemComponent } from "../fooditem/fooditem.component";
   imports: [FooditemComponent]
 })
 export class FoodlistComponent {
-  service = inject(FoodService);
+  foodService = inject(FoodService);
   foodList = signal<Food[]>([]);
+  imageService = inject(ImageCheckService)
+
+
+  checkImg(url: string): Promise<string> {
+    return new Promise(resolve => {
+      this.imageService.checkImage(url).subscribe(isValid => {
+        if (!isValid) {
+          resolve('../../../../assets/default-food-image.jpg'); // default image path
+        } else {
+          resolve(url);
+        }
+      });
+    });
+  }
 
   ngOnInit(): void {
-    this.service.getAll().subscribe((data) => {
-      this.foodList.set(data)
+    this.foodService.getAll().subscribe((foodItems) => {
+      (async () => {
+        for (const item of foodItems) {
+          item.imageUrl = await this.checkImg(item.imageUrl);
+        }
+        this.foodList.set(foodItems)
+      })()
     });
   }
 }

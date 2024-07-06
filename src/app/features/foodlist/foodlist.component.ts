@@ -17,26 +17,16 @@ export class FoodlistComponent {
   imageService = inject(ImageCheckService)
 
 
-  checkImg(url: string): Promise<string> {
-    return new Promise(resolve => {
-      this.imageService.checkImage(url).subscribe(isValid => {
-        if (!isValid) {
-          resolve('../../../../assets/default-food-image.jpg'); // default image path
-        } else {
-          resolve(url);
-        }
-      });
-    });
-  }
 
   ngOnInit(): void {
-    this.foodService.getAll().subscribe((foodItems) => {
-      (async () => {
-        for (const item of foodItems) {
-          item.imageUrl = await this.checkImg(item.imageUrl);
-        }
+    this.foodService.getAll().subscribe({
+      next: (foodItems) => {
         this.foodList.set(foodItems)
-      })()
+      },
+      error: (error) => {
+        console.log(error);
+
+      }
     });
   }
 }

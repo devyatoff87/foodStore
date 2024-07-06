@@ -13,8 +13,9 @@ export class FooditemComponent {
   price = input<Number>();
   cookTime = input<String>('');
   favorite = input<String>('');
-  origins = input<String>('');
+  origins = input<string[]>([]);
   stars = input<Number>();
   imageUrl = input<String>('');
   tags? = input<String>('');
+  even = input<boolean>()
 }

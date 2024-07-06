@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FoodService } from './features/services/food.service';
-import { FoodlistComponent } from "./features/foodlist/foodlist/foodlist.component";
+import { FoodlistComponent } from "./features/foodlist/foodlist.component";
 
 @Component({
   selector: 'app-root',

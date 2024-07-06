@@ -1,8 +1,8 @@
-import { Food } from './../../../models/Food.model';
+import { Food } from '../../models/Food.model';
 import { Component, inject, signal } from '@angular/core';
-import { FoodService } from '../../services/food.service';
+import { FoodService } from '../services/food.service';
 import { FooditemComponent } from "../fooditem/fooditem.component";
-import { ImageCheckService } from '../../../shared/services/image-check.service';
+import { ImageCheckService } from '../../shared/services/image-check.service';
 
 @Component({
   selector: 'app-foodlist',

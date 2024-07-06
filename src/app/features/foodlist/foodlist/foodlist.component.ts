@@ -1,4 +1,5 @@
-import { Component, inject } from '@angular/core';
+import { Food } from './../../../models/Food.model';
+import { Component, inject, signal } from '@angular/core';
 import { FoodService } from '../../services/food.service';
 
 @Component({
@@ -10,10 +11,11 @@ import { FoodService } from '../../services/food.service';
 })
 export class FoodlistComponent {
   service = inject(FoodService);
+  foodList = signal<Food[]>([]);
 
   ngOnInit(): void {
     this.service.getAll().subscribe((data) => {
-      console.log(data);
+      this.foodList.set(data)
     });
   }
 }

@@ -1,1 +1,7 @@
-<p>foodlist works!</p>
+<ng-container>
+  @for (item of foodList(); track $index) {
+  <h3 class="food-title">{{item.name}} <span>{{item.stars}}</span></h3>
+  <img [src]="item.imageUrl" alt="food-img">
+  <div>Cook time: {{item.cookTime}} min.</div>
+  }
+</ng-container>

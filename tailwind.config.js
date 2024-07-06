@@ -3,7 +3,11 @@ module.exports = {
     "./src/**/*.{html,ts}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      borderWidth: {
+        '1': '1px', // Custom border width of 3px
+      },
+    },
   },
   plugins: [],
 }

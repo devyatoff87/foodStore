@@ -2,7 +2,7 @@ export interface Food {
   id: number
   name: string
   price: number
-  cookTime: number
+  cookTime: string
   favorite: boolean
   origins: string[]
   stars: number

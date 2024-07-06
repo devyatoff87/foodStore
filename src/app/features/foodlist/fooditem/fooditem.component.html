@@ -1,1 +1,5 @@
-<p>fooditem works!</p>
+<div class="p-4">
+  <h3 class="font-semibold text-xl">{{name()}} <span class="text-sm">{{stars()}}</span></h3>
+  <img [src]="imageUrl()" alt="food-img">
+  <div>Cook time: {{cookTime()}} min.</div>
+</div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-fooditem',
@@ -8,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrl: './fooditem.component.scss'
 })
 export class FooditemComponent {
-
+  id = input<Number>();
+  name = input<String>('');
+  price = input<Number>();
+  cookTime = input<String>('');
+  favorite = input<String>('');
+  origins = input<String>('');
+  stars = input<Number>();
+  imageUrl = input<String>('');
+  tags? = input<String>('');
 }

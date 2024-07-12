@@ -6,7 +6,9 @@ export const routes: Routes = [
   {
     path: '', component: MainLayoutComponent, children: [
       {
-        path: '', component: FoodlistComponent
+        path: '',
+        loadChildren: () =>
+          import('./features/components/food.routes')
       }
     ]
   }

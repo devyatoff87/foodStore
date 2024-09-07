@@ -15,11 +15,13 @@ module.exports = {
         '70': '70%',
         '80': '80%',
       },
-      fontSize: {
-        'heading-1': '40px',
-        'heading-2': '32px',
-        'heading-3': '24px',
-        'heading-4': '20px',
+      maxHeight: {
+        '100': '100px',
+        '200': '200px',
+        '300': '300px',
+        '400': '400px',
+        '500': '500px',
+        '600': '600px'
       }
     },
   },

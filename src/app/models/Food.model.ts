@@ -7,5 +7,8 @@ export interface Food {
   origins: string[]
   stars: number
   imageUrl: string
-  tags?: string[]
+  tags?: string[],
+  shortDescription: string,
+  fullDescription: string,
+  vegan: boolean
 }

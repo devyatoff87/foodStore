@@ -1,7 +1,4 @@
-<a
-  [routerLink]="['food-details', foodItem()?.id]"
-  class="'bg-slate-100' }} p-6 border-1 border-gray-200"
->
+<div aria-hidden="true" [routerLink]="['food-details', foodItem()?.id]">
   <h3 class="font-semibold sm:text-xl lg:text-2xl">
     {{ foodItem()?.name }} <span class="text-sm">{{ foodItem()?.stars }}</span>
   </h3>
@@ -22,4 +19,4 @@
       </div>
     </li>
   </ul>
-</a>
+</div>

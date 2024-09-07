@@ -5,15 +5,11 @@ import { FoodDetailsComponent } from './food-details/food-details.component';
 export default [
   {
     path: '',
-    children: [
-      {
-        path: '',
-        component: FoodlistComponent,
-      },
-      {
-        path: 'food-details/:id',
-        component: FoodDetailsComponent,
-      },
-    ],
+    component: FoodlistComponent,
   },
+  {
+    path: 'food/:id',
+    component: FoodDetailsComponent,
+  }
+
 ] as Routes;

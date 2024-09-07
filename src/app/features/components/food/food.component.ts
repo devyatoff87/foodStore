@@ -5,7 +5,7 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-food',
   standalone: true,
   imports: [RouterOutlet],
-  templateUrl: './food.component.html',
-  styleUrl: './food.component.scss',
+  template: '<router-outlet > </router-outlet>'
+
 })
-export class FoodComponent {}
+export class FoodComponent { }

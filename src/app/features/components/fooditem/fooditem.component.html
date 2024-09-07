@@ -1,19 +1,14 @@
-<div aria-hidden="true" [routerLink]="['food-details', foodItem()?.id]">
+<div aria-hidden="true" [routerLink]="['food', foodItem()?.id]">
   <h3 class="font-semibold sm:text-xl lg:text-2xl">
     {{ foodItem()?.name }} <span class="text-sm">{{ foodItem()?.stars }}</span>
   </h3>
-  <img
-    [src]="foodItem()?.imageUrl"
-    class="w-full h-80 object-cover mt-3"
-    alt="food-img"
-  />
+  <img [src]="foodItem()?.imageUrl" class="w-full h-80 object-cover mt-3" alt="food-img" />
   <ul>
     <li class="mt-3">Cook time: {{ foodItem()?.cookTime }} min.</li>
     <li>
       <div class="flex">
         Origins:&nbsp; @for (origin of foodItem()?.origins; track $index;) {
-        <span
-          >{{ origin }}@if(foodItem()?.origins!.length-1 !== $index){,&nbsp;}
+        <span>{{ origin }}@if(foodItem()?.origins!.length-1 !== $index){,&nbsp;}
         </span>
         }
       </div>

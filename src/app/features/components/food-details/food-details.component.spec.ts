@@ -1,0 +1,22 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { FoodDetailsComponent } from './food-details.component';
+
+describe('FoodPageComponent', () => {
+  let component: FoodDetailsComponent;
+  let fixture: ComponentFixture<FoodDetailsComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [FoodDetailsComponent],
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(FoodDetailsComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

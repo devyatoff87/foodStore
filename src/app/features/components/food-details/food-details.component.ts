@@ -15,6 +15,7 @@ export class FoodDetailsComponent {
   activeRoute = inject(ActivatedRoute);
   service = inject(FoodService);
   food = signal<Food | null>(null);
+  amount = signal<number>(0)
 
   ngOnInit() {
     this.activeRoute.paramMap.subscribe((a) => {
@@ -27,5 +28,22 @@ export class FoodDetailsComponent {
         });
       });
     });
+  }
+
+  amountHanlder($event: Event) {
+    const target = $event.target as HTMLButtonElement;
+    const handlerType = target.dataset['handlerType'];
+    const max = 10;
+
+    if (handlerType == 'increase' && this.amount() == max) {
+      alert('Please contact us for a large order personally');
+      return;
+    }
+    if (handlerType == 'decrease' && this.amount() > 0) {
+      this.amount.set(this.amount() - 1);
+    }
+    if (handlerType == 'increase' && this.amount() <= max) {
+      this.amount.set(this.amount() + 1);
+    }
   }
 }

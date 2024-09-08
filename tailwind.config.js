@@ -22,6 +22,12 @@ module.exports = {
         '400': '400px',
         '500': '500px',
         '600': '600px'
+      },
+      fontSize: {
+        'heading-1': '40px',
+        'heading-2': '32px',
+        'heading-3': '24px',
+        'heading-4': '20px',
       }
     },
   },

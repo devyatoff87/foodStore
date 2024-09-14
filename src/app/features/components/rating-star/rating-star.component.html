@@ -1,0 +1,14 @@
+<svg [attr.height]="height()" [attr.width]="width()" viewBox="0 0 500 210">
+    <defs>
+        <linearGradient id="half">
+            <stop offset="0%" stop-color="#000" />
+            <stop [attr.offset]="fillPercentsOne() + '%'" stop-color="#000" />
+            <stop [attr.offset]="fillPercentsOne() + '%'" stop-color="#fff" />
+            <stop [attr.offset]="fillPercentsTwo() + '%'" stop-color="#fff" />
+        </linearGradient>
+    </defs>
+    <g fill="url(#half)" stroke="black" stroke-width="3">
+        <polygon points="100,10 40,198 190,78 10,78 160,198" />
+        <polygon points="100,10 40,198 190,78 10,78 160,198" stroke="none" />
+    </g>
+</svg>

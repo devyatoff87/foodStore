@@ -1,0 +1,14 @@
+<div class="flex">
+    <ng-container>
+        @for(item of emptyCounterArray(); track $index) {
+        <app-rating-star [width]="48" [height]="20" [fillPercentsOne]="100" [fillPercentsTwo]="0"
+            [fillColor]="'black'"></app-rating-star>
+        }
+    </ng-container>
+    <ng-container>
+        @if(fillPercentsOne() !== 0) {
+        <app-rating-star [width]="48" [height]="20" [fillPercentsOne]="fillPercentsOne()"
+            [fillPercentsTwo]="fillPercentsTwo()" [fillColor]="'black'"></app-rating-star>
+        }
+    </ng-container>
+</div>

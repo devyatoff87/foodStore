@@ -3,11 +3,12 @@ import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { FoodService } from '../../services/food.service';
 import { Food } from '../../../models/Food.model';
 import { CurrencyPipe } from '@angular/common';
+import { RatingStarsComponent } from "../rating-stars/rating-stars.component";
 
 @Component({
   selector: 'app-food-page',
   standalone: true,
-  imports: [RouterOutlet, CurrencyPipe],
+  imports: [RouterOutlet, CurrencyPipe, RatingStarsComponent],
   templateUrl: './food-details.component.html',
   styleUrl: './food-details.component.scss',
 })

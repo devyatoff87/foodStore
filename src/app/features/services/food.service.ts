@@ -4,13 +4,12 @@ import { Food } from '../../models/Food.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FoodService {
+  private http = inject(HttpClient);
 
-  private http = inject(HttpClient)
-
-  getAll(): Observable<Food[]> {
-    return this.http.get<Food[]>('../../../assets/food_store.json')
+  getProducts(): Observable<Food[]> {
+    return this.http.get<Food[]>('../../../assets/food_store.json');
   }
 }

@@ -3,7 +3,7 @@ import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { FoodService } from '../../services/food.service';
 import { Food } from '../../../models/Food.model';
 import { CurrencyPipe } from '@angular/common';
-import { RatingStarsComponent } from "../rating-stars/rating-stars.component";
+import { RatingStarsComponent } from '../rating-stars/rating-stars.component';
 
 @Component({
   selector: 'app-food-page',
@@ -16,12 +16,12 @@ export class FoodDetailsComponent {
   activeRoute = inject(ActivatedRoute);
   service = inject(FoodService);
   food = signal<Food | null>(null);
-  amount = signal<number>(0)
+  amount = signal<number>(0);
 
   ngOnInit() {
     this.activeRoute.paramMap.subscribe((a) => {
       const id = +a.get('id')!;
-      this.service.getAll().subscribe((data) => {
+      this.service.getProducts().subscribe((data) => {
         data.find((food) => {
           if (food.id == id) {
             this.food.set(food);

@@ -1,11 +1,17 @@
-import { ChangeDetectorRef, Component, input, SimpleChanges } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  input,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 
 @Component({
   selector: 'app-rating-star',
   standalone: true,
   imports: [],
   templateUrl: './rating-star.component.html',
-  styleUrl: './rating-star.component.scss'
+  styleUrl: './rating-star.component.scss',
 })
 export class RatingStarComponent {
   fillPercentsOne = input.required<number>();
@@ -14,11 +20,5 @@ export class RatingStarComponent {
   width = input.required<number>();
   height = input.required<number>();
 
-  constructor(private cdr: ChangeDetectorRef) { }
-
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes['fillPercentsOne'].currentValue !== 100) {
-      setTimeout(() => this.cdr.detectChanges(), 0)
-    }
-  }
+  constructor(private cdr: ChangeDetectorRef) {}
 }

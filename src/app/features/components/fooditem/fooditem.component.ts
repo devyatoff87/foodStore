@@ -1,4 +1,4 @@
-import { Component, input, signal } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { Food } from '../../../models/Food.model';
 
